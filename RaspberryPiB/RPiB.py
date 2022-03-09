@@ -44,6 +44,7 @@ def on_message(client, userdata, message):
         MESSAGE_SENT = str(message.payload.decode("utf-8"))
         if MESSAGE_SENT.lower() == "offline":
             LED3 = OFF
+            LED1 = OFF
         elif MESSAGE_SENT.lower() == "online":
             LED3 = ON
     
