@@ -53,7 +53,7 @@ def on_message(client, userdata, message):
 def BlinkLEDS():
     """
     # @VISHAL VEERA READY
-    Plese complete this pat of the Raspberry pi
+    Please complete this part of the Raspberry pi
     Blink the LED's accordingly to the values of LED1, LED2 and LED3
     """
     # print("LED LightStatus: " + str(LED1))
