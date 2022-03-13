@@ -1,9 +1,10 @@
+from xml.sax.handler import property_declaration_handler
 import paho.mqtt.client as mqtt
 
 # Constants
 BROKER_IP_ADDRESS = 'localhost'
 PORT = 1883
-KEEPALIVE = 200
+KEEPALIVE = 60
 
 TOPIC_LIGHTSENSOR = "lightSensor"
 TOPIC_THRESHOLD = "threshold"
@@ -13,6 +14,10 @@ SUCCESS_CODE = 0
 
 STATUS_CONNECT_MSG = "online"
 STATUS_DISCONNECT_MSG = "offline"
+
+# Variables for pot and ldr data
+pot_last_value = 0
+ldr_last_value = 0
 
 # Callbacks
 def mqtt_connect(client, data, flags, rc):
@@ -30,9 +35,13 @@ def mqtt_disconnect(client, data, rc):
         print(f"Forced disconnect. Code {rc}")
 
 def mqtt_message_rcv(client, data, message):
-    topic = str(message.topic)
-    message = str(message.payload.decode("utf-8"))
-    print(topic + message)
+    _topic = message.topic
+    
+    if _topic == TOPIC_THRESHOLD:
+        pot_last_value = float(message.payload.decode("utf-8"))
+
+    elif _topic == TOPIC_LIGHTSENSOR:
+        ldr_last_value = float(message.payload.decode("utf-8"))
 
 # main
 def main():
@@ -57,7 +66,14 @@ def main():
     mqttClient.subscribe(TOPIC_THRESHOLD)
 
     while True:
-        continue
+        """
+        @BRENDAN
+        Add sampling / scaling here
+        Place publish messages below where needed if sample is
+        outside of threshold or should we do this on msg rcv?
+        """
+        #mqttClient.publish(TOPIC_LIGHTSENSOR, pot_last_value, 2, True)
+        #mqttClient.publish(TOPIC_THRESHOLD, ldr_last_value, 2, True)
 
 
 if __name__ == '__main__':
