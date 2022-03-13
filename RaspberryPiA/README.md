@@ -4,13 +4,14 @@ This repository is created for the sole purpose of uploading codes related to th
 
 ## Environment
 - Python 3.7.3
+
 **JORDAN TO UPDATE THE SOFTWARE ENVIRONMENT FOR RASPBERRY PI B**
 **BRENDAN TO EXPLAIN THE HARDWARE ENVIRONMENT FOR RASPBERRY PI B**
 
 ## Requirements
 ### Software
 - Python3 3.7.3
-- paho-mqtt
+- paho-mqtt 1.6.1
 - mosquitto
 **JORDAN TO UPDATE THE SOFTWARE PROCEDURE FOR RASPBERRY PI B**
 
@@ -18,7 +19,13 @@ This repository is created for the sole purpose of uploading codes related to th
 **BRENDAN TO EXPLAIN THE HARDWARE PART FOR RASPBERRY PI B**
 
 ## Procedure
-**JORDAN TO EXPLAIN THE SOFTWARE PROCEDURE FOR RASPBERRY PI B**
+### Software
+- Install python3
+- Install paho-mqtt
+'''
+pip install paho-mqtt
+'''
+
 **BRENDAN TO EXPLAIN THE HARDWARE PROCEDURE FOR RASPBERRY PI B**
 
 # Instructor
