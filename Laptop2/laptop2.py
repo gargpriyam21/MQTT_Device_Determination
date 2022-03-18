@@ -8,9 +8,9 @@ from collections import defaultdict
 from paho.mqtt import client as mqtt
 
 # BROKER IP: Need to change if the broker is changed
-BROKER_IP_ADDRESS = 'localhost'
-PORT = 1883
-KEEPALIVE = 200
+BROKER_IP_ADDRESS = '107.13.179.1'
+PORT = 3276
+KEEPALIVE = 60
 MQTT_TOPICS = [("ncsu/iot/G11/lightSensor",2), ("ncsu/iot/G11/threshold",2), ("ncsu/iot/G11/LightStatus",2), ("ncsu/iot/G11/Status/RaspberryPiA",2), ("ncsu/iot/G11/Status/RaspberryPiC",2)]
 
 def on_connect(client, userdata, flags, rc):
