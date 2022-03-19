@@ -6,13 +6,13 @@ import numpy as np
 
 
 # Constants
-BROKER_IP_ADDRESS = 'localhost'
-PORT = 1883
+BROKER_IP_ADDRESS = '107.13.179.1'
+PORT = 2346
 KEEPALIVE = 60
 
-TOPIC_LIGHTSENSOR = "lightSensor"
-TOPIC_THRESHOLD = "threshold"
-TOPIC_STATUS = "Status/RaspberryPiA"
+TOPIC_LIGHTSENSOR = "ncsu/iot/G11/lightSensor"
+TOPIC_THRESHOLD = "ncsu/iot/G11/threshold"
+TOPIC_STATUS = "ncsu/iot/G11/Status/RaspberryPiA"
 
 SUCCESS_CODE = 0
 
@@ -167,6 +167,8 @@ def main():
 			threshold_pot = np.max([pot_value * 0.2 , 5])
 			#Debug statments: uncomment to observe LDR and pot values being uploaded
 			#print("updated!")
+			#print("LDR: " +str(ldr_value))
+			#print("Pot: " +str(pot_value))
 			#print("LDR old val: " + str(ldr_last_value))
 			#print("Pot old val: " + str(pot_last_value))
 
