@@ -51,15 +51,17 @@ def on_message(client, userdata, message):
     BlinkLEDS()
 
 def BlinkLEDS():
-    """
-    # @VISHAL VEERA READY
-    Please complete this part of the Raspberry pi
-    Blink the LED's accordingly to the values of LED1, LED2 and LED3
-    """
-    # print("LED LightStatus: " + str(LED1))
-    # print("LED2 RPiA: " + str(LED2))
-    # print("LED3 RPiC: " + str(LED3))
-    # print("\n" + "-"*50 + "\n")
+    BLUE_LED = 33
+    WHITE_LED=35
+    GREEN_LED=37
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(BLUE_LED, GPIO.OUT)
+    GPIO.setup(WHITE_LED, GPIO.OUT)
+    GPIO.setup(GREEN_LED, GPIO.OUT)
+
+'''Raspberry PI A and C part'''
+
+    GPIO.cleanup()
     pass
 
 
