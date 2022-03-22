@@ -6,8 +6,11 @@ import numpy as np
 
 
 # Constants
+#BROKER_IP_ADDRESS = '107.13.179.1'
+#PORT = 2346
 BROKER_IP_ADDRESS = '107.13.179.1'
-PORT = 2346
+PORT = 6254
+
 KEEPALIVE = 60
 
 TOPIC_LIGHTSENSOR = "ncsu/iot/G11/lightSensor"
@@ -20,8 +23,10 @@ STATUS_CONNECT_MSG = "online"
 STATUS_DISCONNECT_MSG = "offline"
 
 # Variables for pot and ldr data
-pot_last_value = 1
-ldr_last_value = 1
+pot_last_value = 0
+ldr_last_value = 0
+local_pot_last_value = 0
+local_ldr_last_value = 0
 pot_arr = np.array([0,0,0,0])
 ldr_arr = np.array([0,0,0,0])
 pot_value = 0
@@ -138,6 +143,8 @@ def main():
 	min_pot = 20
 	max_pot = 12000
 	print("starting loop")
+	local_pot_last_value = 0
+	local_ldr_last_value = 0
 	while True:
 		"""
 		@BRENDAN
@@ -160,11 +167,13 @@ def main():
 
 		#print("LDR: " + str(ldr_value))
 		#print("Pot: " + str(pot_value))
-		if sig_difference(pot_value, pot_last_value, threshold_pot) or sig_difference(ldr_value, ldr_last_value, threshold_ldr):
+		if (sig_difference(pot_value, pot_last_value, threshold_pot) or sig_difference(ldr_value, ldr_last_value, threshold_ldr)) and (local_pot_last_value != pot_value or local_ldr_last_value != ldr_value):
 			mqttClient.publish(TOPIC_LIGHTSENSOR, ldr_value, 2, True)
 			mqttClient.publish(TOPIC_THRESHOLD, pot_value, 2, True)
 			threshold_ldr = np.max([ldr_value * 0.2 , 5])
 			threshold_pot = np.max([pot_value * 0.2 , 5])
+			local_ldr_last_value = ldr_value
+			local_pot_last_value = pot_value
 			#Debug statments: uncomment to observe LDR and pot values being uploaded
 			#print("updated!")
 			#print("LDR: " +str(ldr_value))
