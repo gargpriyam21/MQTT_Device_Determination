@@ -25,6 +25,11 @@ This repository is created for the sole purpose of uploading codes related to th
 - 1 220 nF capacitor
 - 1 1 uF capacitor
 - 2 1 kOhm resistors
+- For our implementation, we didn’t use an ADC. Instead we measured the time it took for capacitors to either charge or discharge by monitoring how long it takes for the raspberry pi input pins to change from high to low or vice versa. This works since the charge time for a capacitor in an RC circuit is dependent on the resistance, and the higher the resistance the longer it will take for the capacitor to charge.
+
+We developed a sensing hat for the Pi that attaches directly to the GPIO pins. This was done to keep the implementation light weight and reduce the risk of wires coming loose over time.
+
+
 ## Procedure
 For the execution of each code file, the  a detailed README.md file explaining how to execute the code is available in the respective folder of that device.
 
