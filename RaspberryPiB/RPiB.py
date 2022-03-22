@@ -6,10 +6,11 @@ import statistics
 import collections
 from collections import defaultdict
 from paho.mqtt import client as mqtt
+import RPi.GPIO as GPIO
 
 # BROKER IP: Need to change if the broker is changed
 BROKER_IP_ADDRESS = '107.13.179.1'
-PORT = 3276
+PORT = 6254
 KEEPALIVE = 60
 MQTT_TOPICS = [("ncsu/iot/G11/LightStatus",2), ("ncsu/iot/G11/Status/RaspberryPiA",2), ("ncsu/iot/G11/Status/RaspberryPiC",2)]
 
@@ -47,40 +48,34 @@ def on_message(client, userdata, message):
             LED1 = OFF
         elif MESSAGE_SENT.lower() == "online":
             LED3 = ON
-    
+
     BlinkLEDS()
 
 def BlinkLEDS():
+    global LED1, LED2, LED3
     BLUE_LED = 33
-    WHITE_LED=35
-    GREEN_LED=37
-    GPIO.setmode(GPIO.BCM)
+    WHITE_LED = 35
+    GREEN_LED = 37
+    GPIO.setmode(GPIO.BOARD)
     GPIO.setup(BLUE_LED, GPIO.OUT)
     GPIO.setup(WHITE_LED, GPIO.OUT)
     GPIO.setup(GREEN_LED, GPIO.OUT)
+    print(LED1, " ", LED2, " ", LED3)
     if LED1 == OFF:
-        GPIO.output(BLUE_LED, GPIO.LOW)
+        GPIO.output(BLUE_LED, False)
     else:
-        GPIO.output(BLUE_LED, GPIO.HIGH)
+        GPIO.output(BLUE_LED, True)
     if LED2 == OFF:
-        GPIO.output(WHITE_LED, GPIO.LOW)
+        GPIO.output(WHITE_LED, False)
     else:
-        GPIO.output(WHITE_LED, GPIO.HIGH)
+        GPIO.output(WHITE_LED, True)
     if LED3 == OFF:
-        GPIO.output(GREEN_LED, GPIO.LOW)
+        GPIO.output(GREEN_LED, False)
     else:
-        GPIO.output(GREEN_LED, GPIO.HIGH)
-        
-'''Raspberry PI A and C part'''
-
-    GPIO.cleanup()
-    pass
-
+        GPIO.output(GREEN_LED, True)
 
 def run():
-    
     subscriber = mqtt.Client("RPiB")
-    
     subscriber.on_connect = on_connect
     subscriber.on_message = on_message
 
@@ -89,9 +84,11 @@ def run():
     subscriber.loop_start()
 
     subscriber.subscribe(MQTT_TOPICS)
-
-    while True:
-        continue
+    try:
+        while True:
+            continue
+    except:
+        GPIO.cleanup()
 
 
 if __name__ == '__main__':
