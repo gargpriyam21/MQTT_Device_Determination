@@ -6,7 +6,7 @@ This repository is created for the sole purpose of uploading codes related to th
 - Python 3.7.3
 
 **JORDAN TO UPDATE THE SOFTWARE ENVIRONMENT FOR RASPBERRY PI B**
-**BRENDAN TO EXPLAIN THE HARDWARE ENVIRONMENT FOR RASPBERRY PI B**
+The hardware used in this assignment was a Raspberry Pi 3B
 
 ## Requirements
 ### Software
@@ -16,7 +16,10 @@ This repository is created for the sole purpose of uploading codes related to th
 **JORDAN TO UPDATE THE SOFTWARE PROCEDURE FOR RASPBERRY PI B**
 
 ### Hardware
-**BRENDAN TO EXPLAIN THE HARDWARE PART FOR RASPBERRY PI B**
+The hardware consists of 1 photoresistor, 1 potentiometer, 2 capacitors and 2 resistors.
+For our implementation, we didn’t use an ADC. Instead we measured the time it took for capacitors to either charge or discharge by monitoring how long it takes for the raspberry pi input pins to change from high to low or vice versa. This works since the charge time for a capacitor in an RC circuit is dependent on the resistance, and the higher the resistance the longer it will take for the capacitor to charge.
+
+We developed a sensing hat for the Pi that attaches directly to the GPIO pins. This was done to keep the implementation light weight and reduce the risk of wires coming loose over time.
 
 ## Procedure
 ### Software
@@ -26,7 +29,6 @@ This repository is created for the sole purpose of uploading codes related to th
 pip install paho-mqtt
 '''
 
-**BRENDAN TO EXPLAIN THE HARDWARE PROCEDURE FOR RASPBERRY PI B**
 
 # Instructor
 - Dr. Muhammad Shahzad (mshahza@ncsu.edu )
