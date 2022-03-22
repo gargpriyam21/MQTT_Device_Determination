@@ -25,7 +25,7 @@ This repository is created for the sole purpose of uploading codes related to th
 
 ## Procedure
 
-## Hardware setup for Raspeberry PI B
+### Hardware setup for Raspeberry PI B
 
 Connect the raspberry pi to a power source and connect the keyboard,mouse and display if required.
 
@@ -43,7 +43,7 @@ Connect one end of the LEDS in series with each resistor and jumper wires.
 
 Ground the other ends
 
-## Software run for Raspeberry PI B
+### Software run for Raspeberry PI B
 
 Initially update the `BROKER_IP_ADDRESS` in the code file (*RPiB.py*) to the IP_ADDRESS of device where the Broker is currently running. If the broker is on the same device update the value to **'localhost'**
 Run the ***Raspberry Pi B (this will only be subscriber)*** code by executing the below command on the Raspberry Pi
