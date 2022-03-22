@@ -12,7 +12,19 @@ This repository is created for the sole purpose of uploading codes related to th
 - mosquitto
 
 ### Hardware
-**VISHAL AND BRENDAN TO EXPLAIN ABOUT THE HARDWARE REQUIREMENTS**
+
+- Raspberry PI A,B
+- 3 LEDS
+- 3 Resistors
+- 4 Jumper Wires
+- BreadBoard
+- Keyboard, mouse & display (not mandatory)
+- Raspberry Pi 3B
+- 1 photoresistor
+- 1 500 kOhm Potentiometer
+- 1 220 nF capacitor
+- 1 1 uF capacitor
+- 2 1 kOhm resistors
 ## Procedure
 For the execution of each code file, the  a detailed README.md file explaining how to execute the code is available in the respective folder of that device.
 
