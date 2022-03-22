@@ -58,7 +58,19 @@ def BlinkLEDS():
     GPIO.setup(BLUE_LED, GPIO.OUT)
     GPIO.setup(WHITE_LED, GPIO.OUT)
     GPIO.setup(GREEN_LED, GPIO.OUT)
-
+    if LED1 == OFF:
+        GPIO.output(BLUE_LED, GPIO.LOW)
+    else:
+        GPIO.output(BLUE_LED, GPIO.HIGH)
+    if LED2 == OFF:
+        GPIO.output(WHITE_LED, GPIO.LOW)
+    else:
+        GPIO.output(WHITE_LED, GPIO.HIGH)
+    if LED3 == OFF:
+        GPIO.output(GREEN_LED, GPIO.LOW)
+    else:
+        GPIO.output(GREEN_LED, GPIO.HIGH)
+        
 '''Raspberry PI A and C part'''
 
     GPIO.cleanup()
