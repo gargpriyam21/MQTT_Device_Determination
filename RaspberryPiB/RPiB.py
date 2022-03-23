@@ -10,7 +10,7 @@ import RPi.GPIO as GPIO
 
 # BROKER IP: Need to change if the broker is changed
 BROKER_IP_ADDRESS = '107.13.179.1'
-PORT = 6254
+PORT = 3276
 KEEPALIVE = 60
 MQTT_TOPICS = [("ncsu/iot/G11/LightStatus",2), ("ncsu/iot/G11/Status/RaspberryPiA",2), ("ncsu/iot/G11/Status/RaspberryPiC",2)]
 
@@ -52,15 +52,18 @@ def on_message(client, userdata, message):
     BlinkLEDS()
 
 def BlinkLEDS():
+
     global LED1, LED2, LED3
+
     BLUE_LED = 33
     WHITE_LED = 35
     GREEN_LED = 37
+
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(BLUE_LED, GPIO.OUT)
     GPIO.setup(WHITE_LED, GPIO.OUT)
     GPIO.setup(GREEN_LED, GPIO.OUT)
-    print(LED1, " ", LED2, " ", LED3)
+
     if LED1 == OFF:
         GPIO.output(BLUE_LED, False)
     else:
@@ -84,6 +87,7 @@ def run():
     subscriber.loop_start()
 
     subscriber.subscribe(MQTT_TOPICS)
+    
     try:
         while True:
             continue

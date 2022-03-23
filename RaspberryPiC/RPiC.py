@@ -36,7 +36,7 @@ def on_connect(client, userdata, flags, rc):
     client.publish(topic = topic, payload = "online", qos = qos, retain = True)
     print("Connected to the Broker with result code "+str(rc))
 
-def on_disconnect(client, userdata, flags, rc):
+def on_disconnect(client, userdata, rc):
     topic = MQTT_PUBLISH_TOPICS[1][0]
     qos = MQTT_PUBLISH_TOPICS[1][1]
     client.publish(topic = topic, payload = "offline", qos = qos, retain = True)
@@ -72,16 +72,16 @@ def calculate_lightstatus(client):
 
     ONE_PUBLISHED = False
     while LDR_Q and POTEN_Q:
-        print("LDR")
-        print(LDR_Q)
+        # print("LDR")
+        # print(LDR_Q)
 
-        print("Poten")
-        print(POTEN_Q)
+        # print("Poten")
+        # print(POTEN_Q)
 
-        print("Light Status = " + LIGHTSTATUS)
-        print("Prev Light Status = " + PREVIOUS_LIGHTSTATUS)
+        # print("Light Status = " + LIGHTSTATUS)
+        # print("Prev Light Status = " + PREVIOUS_LIGHTSTATUS)
 
-        print("*"*50)
+        # print("*"*50)
 
         LDR_VALUE = LDR_Q.popleft()
         THRESHOLD = POTEN_Q.popleft()
@@ -95,7 +95,9 @@ def calculate_lightstatus(client):
             qos = MQTT_PUBLISH_TOPICS[0][1]
             ONE_PUBLISHED = True
             client.publish(topic = topic, payload = LIGHTSTATUS, qos = qos, retain = True)
+            print("Published Message '" + LIGHTSTATUS + "' to the Broker")
             break
+
     if ONE_PUBLISHED:
         PREV_SET = False
 

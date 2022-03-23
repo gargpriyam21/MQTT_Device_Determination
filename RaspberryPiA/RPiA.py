@@ -4,12 +4,11 @@ import RPi.GPIO as GPIO
 import time
 import numpy as np
 
-
 # Constants
 #BROKER_IP_ADDRESS = '107.13.179.1'
 #PORT = 2346
 BROKER_IP_ADDRESS = '107.13.179.1'
-PORT = 6254
+PORT = 3276
 
 KEEPALIVE = 60
 
@@ -85,10 +84,10 @@ def read_pot():
 	#Count until capacitor is charged
 	count = 0
 	while (GPIO.input(pot_pin) == GPIO.LOW):
-        	count = count + 1
+		count = count + 1
 		#if potentiometer cannot be read, return previous pot value
-	        if count > 50000:
-		        return pot_last_value
+		if count > 50000:
+			return pot_last_value
 	return count
 
 
@@ -104,7 +103,7 @@ def read_LDR():
 	#Count until capacitor is charged
 	count = 0
 	while (GPIO.input(LDR_pin) == GPIO.LOW):
-	        count = count + 1
+		count = count + 1
 	return count
 
 def sig_difference(new_val, old_val, threshold):
@@ -146,12 +145,12 @@ def main():
 	local_pot_last_value = 0
 	local_ldr_last_value = 0
 	while True:
-		"""
-		@BRENDAN
-		Add sampling / scaling here
-		Place publish messages below where needed if sample is
-		outside of threshold or should we do this on msg rcv?
-		"""
+		# """
+		# @BRENDAN
+		# Add sampling / scaling here
+		# Place publish messages below where needed if sample is
+		# outside of threshold or should we do this on msg rcv?
+		# """
 		#take moving average of pot & ldr values to 
 		#reduce sudden changes from noise
 		time.sleep(0.05)
