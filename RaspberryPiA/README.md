@@ -39,14 +39,15 @@ GPIO 19: LDR Pin, this pin is dual purpose. It both discharges the capacitor in 
 ### Software
 - Install python3
 - Install required packages
-'''
+
+```
 pip install paho-mqtt
 pip install RPi.GPIO
 pip install numpy
+```
 
-'''
 - Update BROKER_IP_ADDRESS and PORT in the RPiA.py file to the IP address and port of the intended device running the Broker. If running on the same device, use address 'localhost'
-- To run from file location: python3 RPiA.py
+- To run from file location: `python3 RPiA.py`
 
 
 # Instructor
