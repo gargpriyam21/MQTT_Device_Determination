@@ -19,10 +19,16 @@ Run the ***Laptop # 2 (this will only be subscriber)*** code by executing the be
 python3 laptop2.py
 ```
 
-The detail logs in this form will be start printing:
+The detail logs will be saved in the `LogFile.csv` file in such format:
 
 ```
-{TIMESTAMP}: Received Message - '{MESSAGE}' from Device '{DEVICE}')
+TimeStamp,Device,Topic,Message Received
+```
+
+also the LED1 status will be printing in the format 
+
+```
+{TIMESTAMP} + ": LED 1 is now " + {Status}
 ```
 
 # Instructor

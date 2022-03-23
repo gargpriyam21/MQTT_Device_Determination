@@ -8,11 +8,16 @@ This repository is created for the sole purpose of uploading codes related to th
 ## Requirements
 ### Software
 - Python3 3.7.3
-- paho-mqtt
-- mosquitto
-- numpy
+- paho-mqtt v1.6.1
+- numpy v1.19.5
+- mosquitto 
 - RPi.GPIO
 
+```
+pip install paho-mqtt
+pip install RPi.GPIO
+brew install mosquitto
+```
 ### Hardware
 
 - Raspberry PI A,B
@@ -32,19 +37,18 @@ For our implementation, we didn’t use an ADC. Instead we measured the time it 
 
 We developed a sensing hat for the Pi that attaches directly to the GPIO pins. This was done to keep the implementation light weight and reduce the risk of wires coming loose over time.
 
-
 ## Procedure
 For the execution of each code file, the  a detailed README.md file explaining how to execute the code is available in the respective folder of that device.
 
-Laptop #1 : [Laptop #1](https://github.ncsu.edu/jwboerge/IoT_ASN3_G11/tree/main/Laptop1)
+Laptop #1 : [Laptop #1](./Laptop1)
 
-Laptop #2 : [Laptop #2](https://github.ncsu.edu/jwboerge/IoT_ASN3_G11/tree/main/Laptop2)
+Laptop #2 : [Laptop #2](./Laptop2)
 
-Raspberry Pi A : [Raspberry Pi A](https://github.ncsu.edu/jwboerge/IoT_ASN3_G11/tree/main/RaspberryPiA)
+Raspberry Pi A : [Raspberry Pi A](./RaspberryPiA)
 
-Raspberry Pi B : [Raspberry Pi B](https://github.ncsu.edu/jwboerge/IoT_ASN3_G11/tree/main/RaspberryPiB)
+Raspberry Pi B : [Raspberry Pi B](./RaspberryPiB)
 
-Raspberry Pi C : [Raspberry Pi C](https://github.ncsu.edu/jwboerge/IoT_ASN3_G11/tree/main/RaspberryPiC)
+Raspberry Pi C : [Raspberry Pi C](./RaspberryPiC)
 
 # Instructor
 - Dr. Muhammad Shahzad (mshahza@ncsu.edu )
