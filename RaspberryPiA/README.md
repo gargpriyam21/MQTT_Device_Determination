@@ -4,15 +4,16 @@ This repository is created for the sole purpose of uploading codes related to th
 
 ## Environment
 - Python 3.7.3
-
-**JORDAN TO UPDATE THE SOFTWARE ENVIRONMENT FOR RASPBERRY PI B**
+- RaspberryPi OS
+- Paho MQTT
 
 ## Requirements
 ### Software
 - Python3 3.7.3
 - paho-mqtt 1.6.1
 - mosquitto
-**JORDAN TO UPDATE THE SOFTWARE PROCEDURE FOR RASPBERRY PI B**
+- RPi.GPIO
+- numpy
 
 ### Hardware
 - Raspberry Pi 3B
@@ -30,10 +31,15 @@ We developed a sensing hat for the Pi that attaches directly to the GPIO pins. T
 ## Procedure
 ### Software
 - Install python3
-- Install paho-mqtt
+- Install required packages
 '''
 pip install paho-mqtt
+pip install RPi.GPIO
+pip install numpy
+
 '''
+- Update BROKER_IP_ADDRESS and PORT in the RPiA.py file to the IP address and port of the intended device running the Broker. If running on the same device, use address 'localhost'
+- To run from file location: python3 RPiA.py
 
 
 # Instructor
