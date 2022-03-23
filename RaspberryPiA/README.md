@@ -28,6 +28,10 @@ For our implementation, we didn’t use an ADC. Instead we measured the time it 
 
 We developed a sensing hat for the Pi that attaches directly to the GPIO pins. This was done to keep the implementation light weight and reduce the risk of wires coming loose over time.
 
+The circuit diagram for this implementation can be seen below:
+
+![RPi A Diagram](/PI A diagram labeled.png)
+
 ## Procedure
 ### Software
 - Install python3
