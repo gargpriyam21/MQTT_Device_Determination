@@ -10,7 +10,12 @@ This repository is created for the sole purpose of uploading codes related to th
 ### Software
 - Python3 3.7.3
 - paho-mqtt
-- mosquitto
+
+```
+pip install paho-mqtt
+pip install RPi.GPIO
+pip install numpy
+```
 
 ### Hardware
 Given the inflated prices of Raspberry Pi these days, we had decided to use a laptop to replace Raspberry Pi C, Apple Macbook Pro with macOS Monterey Version 12.2.1 was used.
