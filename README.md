@@ -50,6 +50,16 @@ Raspberry Pi B : [Raspberry Pi B](./RaspberryPiB)
 
 Raspberry Pi C : [Raspberry Pi C](./RaspberryPiC)
 
+### Recommended Order to run the devices
+Step 1: Run the Broker on Laptop 1
+
+Step 2: Run the Laptop 2 code from its file location
+
+Step 3: Run the Raspberry Pi B code from its file location
+
+Step 4: Run the Raspberry Pi C code from its file location
+
+Step 5: Run the Raspberry Pi A code from its file location
 # Instructor
 - Dr. Muhammad Shahzad (mshahza@ncsu.edu )
 
