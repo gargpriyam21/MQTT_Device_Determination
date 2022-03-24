@@ -48,7 +48,8 @@ pip install RPi.GPIO
 pip install numpy
 ```
 
-- Update BROKER_IP_ADDRESS and PORT in the RPiA.py file to the IP address and port of the intended device running the Broker. If running on the same device, use address 'localhost'
+Initially update the `BROKER_IP_ADDRESS` and `PORT`in the code file (*Laptop2.py*) to the IP_ADDRESS and PORT of device where the Broker is currently running. If the broker is on the same device update the value of BROKER_IP_ADDRESS to **'localhost'** and PORT to **'1883'**
+
 - To run from file location: 
 
 ```
