@@ -20,18 +20,18 @@ brew install mosquitto
 ```
 ### Hardware
 
-- Raspberry PI A,B
+- Raspberry PI A,B (We have used Raspberry Pi 3B model)
 - 3 LEDS
-- 3 Resistors
-- 4 Jumper Wires
-- BreadBoard
-- Keyboard, mouse & display (not mandatory)
-- Raspberry Pi 3B
-- 1 photoresistor
+- 5 Resistors
+  - 2 1kOhm Resistors
+  - 3 230 Ohm Resistors
+- 1 Photoresistor (LDR)
 - 1 500 kOhm Potentiometer
+- Jumper Wires
+- BreadBoard
 - 1 220 nF capacitor
 - 1 1 uF capacitor
-- 2 1 kOhm resistors
+- Keyboard, mouse & display (not mandatory)
 
 For our implementation, we didn’t use an ADC. Instead we measured the time it took for capacitors to either charge or discharge by monitoring how long it takes for the raspberry pi input pins to change from high to low or vice versa. This works since the charge time for a capacitor in an RC circuit is dependent on the resistance, and the higher the resistance the longer it will take for the capacitor to charge.
 
