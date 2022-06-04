@@ -1,6 +1,4 @@
-# IoT_ASN3_G11 - MQTT publisher as well as subscriber (Raspberry Pi A)
-
-This repository is created for the sole purpose of uploading codes related to the Assignment 3 for the course CSC 591 - 022 Internet of Things: Architectures, Applications, and Implementation Spring 2022 of North Carolina State University.
+# MQTT_Device_Determination - MQTT publisher as well as subscriber (Raspberry Pi A)
 
 ## Environment
 - Python 3.7.3
@@ -55,17 +53,3 @@ Initially update the `BROKER_IP_ADDRESS` and `PORT`in the code file (*Laptop2.py
 ```
 python3 RPiA.py
 ```
-
-
-# Instructor
-- Dr. Muhammad Shahzad (mshahza@ncsu.edu )
-
-# Teaching Assistants
-- Hassan Ali Khan (hakhan@ncsu.edu)
-
-# Team
-- Priyam Garg (pgarg6@ncsu.edu)
-- Divyang Doshi	(ddoshi2@ncsu.edu)
-- Brendan Driscoll (bhdrisco@ncsu.edu)
-- Jordan Boerger (jwboerge@ncsu.edu)
-- Vishal Veera Reddy (vveerar2@ncsu.edu)
