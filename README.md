@@ -1,6 +1,6 @@
 # MQTT_Device_Determination
 
-The main objective of the the project is to get the hands-on experience with MQTT.
+The main objective of the project is to get the hands-on experience with MQTT.
 In the project we have implemented a complete IoT environment where there are 5 devices each one with different use cases as explained below:
 
 ### Device 1. Raspberry Pi A 
